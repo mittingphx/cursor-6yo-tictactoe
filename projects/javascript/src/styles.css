@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #1a365d;  /* Dark blue */
+  --secondary-color: #2b4c7e; /* Medium blue */
+  --highlight-color: #3182ce; /* Bright blue */
+  --background-color: #ebf8ff; /* Very light blue */
+  --text-color: #1a365d; /* Dark blue */
+  --grid-border: #2b4c7e; /* Medium blue */
+  --cell-selected: #bee3f8; /* Light blue */
+  --cell-hover: #e2e8f0; /* Subtle hover blue */
+}
+
+.board {
+  background-color: var(--background-color);
+  border: 2px solid var(--grid-border);
+}
+
+.cell {
+  border: 1px solid var(--grid-border);
+  color: var(--text-color);
+}
+
+.cell:hover {
+  background-color: var(--cell-hover);
+}
+
+.cell.selected {
+  background-color: var(--cell-selected);
+}
+
+.instructions {
+  color: var(--text-color);
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+/* Make thick borders for 3x3 boxes */
+.cell[data-col="2"], .cell[data-col="5"] {
+  border-right: 2px solid var(--grid-border);
+}
+
+.cell[data-row="2"], .cell[data-row="5"] {
+  border-bottom: 2px solid var(--grid-border);
+} 
