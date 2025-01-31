@@ -4,18 +4,13 @@ function Board() {
   // ... existing state and other code ...
 
   const handleCellClick = (rowIndex, colIndex) => {
-    if (isMobileDevice()) {
-      // If cell is already selected, cycle through numbers 1-9
-      if (selectedCell?.row === rowIndex && selectedCell?.col === colIndex) {
-        const currentValue = board[rowIndex][colIndex];
-        const nextValue = currentValue === 9 ? 0 : (currentValue + 1);
-        handleNumberInput(nextValue);
-      } else {
-        // Select the cell
-        setSelectedCell({ row: rowIndex, col: colIndex });
-      }
+    // If cell is already selected, cycle through numbers 1-9
+    if (selectedCell?.row === rowIndex && selectedCell?.col === colIndex) {
+      const currentValue = board[rowIndex][colIndex];
+      const nextValue = currentValue === 9 ? 0 : (currentValue + 1);
+      handleNumberInput(nextValue);
     } else {
-      // On desktop, just select the cell
+      // Select the cell
       setSelectedCell({ row: rowIndex, col: colIndex });
     }
   };
